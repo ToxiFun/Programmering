@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Beslutningstageren (for Cathrine)</title>
+        <script type="text/javascript">
+            var dic = ["Ja", "Nej", "I morgen", "Senere i dag", "Aldrig", "Måske"];
+            var num = 0;
+            
+            function yesNo() {
+                num = Math.floor(Math.random() * (dic.length - 1));
+                document.getElementById("output").innerHTML = dic[num];
+            }
+            
+            function valgmulighed() {
+                num = false;
+                num = prompt("Hvor mange valgmuligheder?");
+                if (isNaN(num)) {
+                    alert("Der skete en fejl. Prøv igen..");
+                    valgmulighed();
+                } else document.getElementById("output").innerHTML = "Nr. " + Math.floor((Math.random() * num) + 1);
+            }
+        </script>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Beslutningstageren (for Cathrine)</h1>
+        <br>
+        <div>
+            <h3>Hvad slags er dit dilemma?</h3>
+            <input type="button" onclick="yesNo()" value="Ja/nej">
+            <input type="button" onclick="valgmulighed()" value="Valgmulighed">
+            <p id="output"></p>
+        </div>
+    </body>
+</html>
